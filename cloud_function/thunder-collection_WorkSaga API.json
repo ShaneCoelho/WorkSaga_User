@@ -1,0 +1,163 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "WorkSaga API",
+    "dateExported": "2022-02-24T17:34:55.158Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "containerId": "",
+            "sortNum": 10000,
+            "name": "Location",
+            "_id": "d594e929-f55f-4810-a675-ef4a9fce2ae2",
+            "created": "2022-02-24T16:49:51.864Z"
+        }
+    ],
+    "requests": [
+        {
+            "containerId": "",
+            "sortNum": 10000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "ab35ca76-64a3-45ae-a696-1843604f5d3a",
+            "name": "WorkSaga API link",
+            "url": "https://worksaga.herokuapp.com/",
+            "method": "GET",
+            "modified": "2022-02-24T15:30:46.307Z",
+            "created": "2022-02-24T15:30:02.675Z",
+            "_id": "3d514226-dc40-4a71-b6f9-49eb8da46bd8",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "d594e929-f55f-4810-a675-ef4a9fce2ae2",
+            "sortNum": 10000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIxN2FiZjY4ODVhMTkwNDljMmMzN2NmIn0sImlhdCI6MTY0NTcxODUxOH0.MF0ABaAnn8kDi4GlHfn3XbddxVaQjQCAqEVKExHssNY"
+                }
+            ],
+            "colId": "ab35ca76-64a3-45ae-a696-1843604f5d3a",
+            "name": "add location",
+            "url": "https://worksaga.herokuapp.com/api/user/updatelocation",
+            "method": "POST",
+            "modified": "2022-02-24T17:23:48.025Z",
+            "created": "2022-02-24T16:02:39.049Z",
+            "_id": "d31656e2-bfea-413c-819a-476ff7f370f2",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"location\":\"kk\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 20000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "ab35ca76-64a3-45ae-a696-1843604f5d3a",
+            "name": "Create User",
+            "url": "https://worksaga.herokuapp.com/api/auth/createuser",
+            "method": "POST",
+            "modified": "2022-02-24T16:02:57.405Z",
+            "created": "2022-02-24T15:31:27.539Z",
+            "_id": "c5b400f4-058e-40be-b5e9-117dfc4582a0",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\":\"Axill Dcunha\",\n    \"email\":\"axilldcunha@gmail.com\",\n    \"password\":\"vasai2205\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "d594e929-f55f-4810-a675-ef4a9fce2ae2",
+            "sortNum": 50000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIxN2FiZjY4ODVhMTkwNDljMmMzN2NmIn0sImlhdCI6MTY0NTcxODUxOH0.MF0ABaAnn8kDi4GlHfn3XbddxVaQjQCAqEVKExHssNY"
+                }
+            ],
+            "colId": "ab35ca76-64a3-45ae-a696-1843604f5d3a",
+            "name": "Delete Location",
+            "url": "https://worksaga.herokuapp.com/api/user/deletelocation",
+            "method": "POST",
+            "modified": "2022-02-24T17:24:03.637Z",
+            "created": "2022-02-24T16:50:17.516Z",
+            "_id": "3a67d0db-d53d-4230-b4ba-91ef792a4c53",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"location\":\"kk\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "d594e929-f55f-4810-a675-ef4a9fce2ae2",
+            "sortNum": 60000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIxN2FiZjY4ODVhMTkwNDljMmMzN2NmIn0sImlhdCI6MTY0NTcxODUxOH0.MF0ABaAnn8kDi4GlHfn3XbddxVaQjQCAqEVKExHssNY"
+                }
+            ],
+            "colId": "ab35ca76-64a3-45ae-a696-1843604f5d3a",
+            "name": "Delete All",
+            "url": "https://worksaga.herokuapp.com/api/user/deletealllocation",
+            "method": "POST",
+            "modified": "2022-02-24T17:23:12.977Z",
+            "created": "2022-02-24T17:04:33.422Z",
+            "_id": "a866f050-ce65-43e8-9fc5-3dae168713d0",
+            "params": [],
+            "tests": []
+        }
+    ]
+}

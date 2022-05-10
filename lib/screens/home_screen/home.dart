@@ -300,19 +300,20 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             SelectedCategories(
-                                                value: "electrician")));
+                                                value: "webdeveloper")));
                               },
                               child: CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 50,
                                 backgroundImage:
-                                    AssetImage("assets/images/try2.jpg"),
+                                    AssetImage("assets/images/s2.png"),
                               ),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'Electrician',
+                              'Web Developers',
                               style: TextStyle(
                                 color: Color(0xff182a42),
                                 fontSize: 14,
@@ -336,18 +337,19 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             SelectedCategories(
-                                                value: "electrician")));
+                                                value: "parlour")));
                               },
                               child: CircleAvatar(
+                                  backgroundColor: Colors.white,
                                   radius: 50,
                                   backgroundImage:
-                                      AssetImage("assets/images/try2.jpg")),
+                                      AssetImage("assets/images/s1.png")),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'Electrician',
+                              'Make Up',
                               style: TextStyle(
                                 color: Color(0xff182a42),
                                 fontSize: 14,
@@ -371,18 +373,19 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             SelectedCategories(
-                                                value: "electrician")));
+                                                value: "arthitecture")));
                               },
                               child: CircleAvatar(
+                                  backgroundColor: Colors.white,
                                   radius: 50,
                                   backgroundImage:
-                                      AssetImage("assets/images/try2.jpg")),
+                                      AssetImage("assets/images/s3.png")),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'Electrician',
+                              'Arthitecture',
                               style: TextStyle(
                                 color: Color(0xff182a42),
                                 fontSize: 14,
@@ -406,18 +409,19 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             SelectedCategories(
-                                                value: "electrician")));
+                                                value: "softwaredevelopers")));
                               },
                               child: CircleAvatar(
+                                  backgroundColor: Colors.white,
                                   radius: 50,
                                   backgroundImage:
-                                      AssetImage("assets/images/try2.jpg")),
+                                      AssetImage("assets/images/s2.png")),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'Electrician',
+                              'Software Developer',
                               style: TextStyle(
                                 color: Color(0xff182a42),
                                 fontSize: 14,
@@ -453,19 +457,56 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             SelectedCategories(
+                                                value: "acrepair")));
+                              },
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 50,
+                                backgroundImage:
+                                    AssetImage("assets/images/s4.png"),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              'Ac Repair',
+                              style: TextStyle(
+                                color: Color(0xff182a42),
+                                fontSize: 14,
+                                fontFamily: "NanumMyeongjo",
+                                fontWeight: FontWeight.w800,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            SelectedCategories(
                                                 value: "plumber")));
                               },
                               child: CircleAvatar(
-                                radius: 50,
-                                backgroundImage:
-                                    AssetImage("assets/images/try2.jpg"),
-                              ),
+                                  backgroundColor: Colors.white,
+                                  radius: 50,
+                                  backgroundImage:
+                                      AssetImage("assets/images/s6.png")),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'plumber',
+                              'Plumber',
                               style: TextStyle(
                                 color: Color(0xff182a42),
                                 fontSize: 14,
@@ -489,18 +530,19 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             SelectedCategories(
-                                                value: "electrician")));
+                                                value: "architecture")));
                               },
                               child: CircleAvatar(
+                                  backgroundColor: Colors.white,
                                   radius: 50,
                                   backgroundImage:
-                                      AssetImage("assets/images/try2.jpg")),
+                                      AssetImage("assets/images/s5.png")),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'Electrician',
+                              'Painter',
                               style: TextStyle(
                                 color: Color(0xff182a42),
                                 fontSize: 14,
@@ -524,53 +566,19 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             SelectedCategories(
-                                                value: "electrician")));
+                                                value: "makeup")));
                               },
                               child: CircleAvatar(
+                                  backgroundColor: Colors.white,
                                   radius: 50,
                                   backgroundImage:
-                                      AssetImage("assets/images/try2.jpg")),
+                                      AssetImage("assets/images/s1.png")),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'Electrician',
-                              style: TextStyle(
-                                color: Color(0xff182a42),
-                                fontSize: 14,
-                                fontFamily: "NanumMyeongjo",
-                                fontWeight: FontWeight.w800,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            SelectedCategories(
-                                                value: "electrician")));
-                              },
-                              child: CircleAvatar(
-                                  radius: 50,
-                                  backgroundImage:
-                                      AssetImage("assets/images/try2.jpg")),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              'Electrician',
+                              'Make Up',
                               style: TextStyle(
                                 color: Color(0xff182a42),
                                 fontSize: 14,
@@ -584,13 +592,6 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-              ),
-              Container(
-                height: 200,
-                width: MediaQuery.of(context).size.width * 0.9,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color.fromARGB(255, 152, 195, 223)),
               ),
               SizedBox(
                 height: 30,

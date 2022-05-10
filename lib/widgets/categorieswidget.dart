@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class CategoriesWidget extends StatefulWidget {
   final String value;
-  const CategoriesWidget({Key? key, required this.value}) : super(key: key);
+
+  final String image;
+  const CategoriesWidget({Key? key, required this.value, required this.image})
+      : super(key: key);
 
   @override
   State<CategoriesWidget> createState() => _CategoriesWidgetState();
@@ -32,7 +35,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
               child: Row(
                 children: [
                   Image.asset(
-                    'assets/images/p2.png',
+                    widget.image,
                     width: 100,
                     height: 130,
                     fit: BoxFit.cover,

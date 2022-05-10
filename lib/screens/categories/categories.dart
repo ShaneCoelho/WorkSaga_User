@@ -19,9 +19,58 @@ class _CategoriesState extends State<Categories> {
     'electrician',
     'plumber',
     'mechanic',
-    'web developer',
-    'ac repair',
-    'parlour'
+    'webdeveloper',
+    'acrepair',
+    'parlour',
+    'datascience',
+    'engineering',
+    'writing',
+    'translation',
+    'legal',
+    'adminsupport',
+    'customerservice',
+    'sales',
+    'accounting',
+    'design ',
+    'manager'
+  ];
+  final List<String> displayvalue = <String>[
+    'Electrician',
+    'Plumber',
+    'Mechanic',
+    'Web Developer',
+    'AC Repair',
+    'Parlour',
+    'Data Science',
+    'Engineering',
+    'Writing',
+    'Translation',
+    'Legal',
+    'Admin Support',
+    'Customer ser',
+    'Sales ',
+    'Accounting',
+    'Design ',
+    'Manager'
+  ];
+  final List<String> displayimg = <String>[
+    'assets/images/p2.png',
+    'assets/images/s6.png',
+    'assets/images/s3.png',
+    'assets/images/s2.png',
+    'assets/images/s4.png',
+    'assets/images/s1.png',
+    'assets/images/s6.png',
+    'assets/images/s6.png',
+    'assets/images/s3.png',
+    'assets/images/s4.png',
+    'assets/images/s5.png',
+    'assets/images/s6.png',
+    'assets/images/s1.png',
+    'assets/images/s6.png',
+    'assets/images/s3.png',
+    'assets/images/s5.png',
+    'assets/images/s6.png'
   ];
 
   @override
@@ -75,49 +124,59 @@ class _CategoriesState extends State<Categories> {
                         child: Padding(
                           padding:
                               EdgeInsetsDirectional.fromSTEB(35, 240, 0, 0),
-                          child: Container(
-                            width: 340,
-                            height: 130,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFDBECF4),
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SelectedCategories(
+                                          value: "softwaredeveloper")));
+                            },
+                            child: Container(
+                              width: 340,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFDBECF4),
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(30),
+                                  bottomRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                ),
                               ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/p2.png',
-                                    width: 100,
-                                    height: 130,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Electrician',
-                                        style: TextStyle(
-                                            fontSize: 24,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Container(
-                                        width: 170,
-                                        child: Text(
-                                          'An electrician is a tradesperson specializing in electrical wiring',
-                                          style: TextStyle(fontSize: 12),
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/s2.png',
+                                      width: 100,
+                                      height: 130,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Software Dev',
+                                          style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                      )
-                                    ],
-                                  )
-                                ],
+                                        Container(
+                                          width: 170,
+                                          child: Text(
+                                            'An electrician is a tradesperson specializing in electrical wiring',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -244,8 +303,8 @@ class _CategoriesState extends State<Categories> {
                                                 value: "${value[index]}")));
                               },
                               child: CategoriesWidget(
-                                value: "${value[index]}",
-                              ));
+                                  value: "${displayvalue[index]}",
+                                  image: "${displayimg[index]}"));
                         }),
                   ],
                 ),

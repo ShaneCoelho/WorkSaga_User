@@ -11,6 +11,7 @@ class UserModel {
     required this.upcomingCustomers,
     required this.review,
     required this.Avatar,
+    required this.banner,
     required this.experience,
     required this.CVandCert,
     required this.createdAt,
@@ -28,6 +29,7 @@ class UserModel {
   late final List<dynamic> upcomingCustomers;
   late final List<dynamic> review;
   late final String Avatar;
+  late final String banner;
   late final List<Experience> experience;
   late final List<dynamic> CVandCert;
   late final String createdAt;
@@ -46,6 +48,7 @@ class UserModel {
     upcomingCustomers = (json['upcomingCustomers']);
     review = (json['review']);
     Avatar = json['Avatar'];
+    banner = json['banner'];
     experience = List.from(json['experience'])
         .map((e) => Experience.fromJson(e))
         .toList();
@@ -68,6 +71,7 @@ class UserModel {
     _data['upcomingCustomers'] = upcomingCustomers;
     _data['review'] = review;
     _data['Avatar'] = Avatar;
+    _data['banner'] = banner;
     _data['experience'] = experience.map((e) => e.toJson()).toList();
     _data['CVandCert'] = CVandCert;
     _data['createdAt'] = createdAt;

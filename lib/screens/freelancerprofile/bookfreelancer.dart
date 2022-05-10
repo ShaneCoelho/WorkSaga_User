@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:worksaga/screens/home_screen/home.dart';
+
+import '../booking/finishbooking.dart';
 
 class BookFreelancer extends StatefulWidget {
   @override
@@ -29,6 +32,8 @@ class _BookFreelancerState extends State<BookFreelancer> {
     super.initState();
   }
 
+  late bool success = false;
+
   Future<void> FinalBooking(String email, String mobileno, String address,
       String jobdescription) async {
     final pref = await SharedPreferences.getInstance();
@@ -52,9 +57,12 @@ class _BookFreelancerState extends State<BookFreelancer> {
 
     if (response.statusCode == 200) {
       print("Success");
+      success = true;
     } else if (response.statusCode == 400) {
       print("Failed");
+      success = false;
     } else {
+      success = false;
       throw Exception('Failed to create data.');
     }
   }
@@ -413,6 +421,17 @@ class _BookFreelancerState extends State<BookFreelancer> {
                         onPressed: () async {
                           FinalBooking(_email.text, _mobileno.text,
                               _address.text, _jobdescription.text);
+                          if (success == true) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()));
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => FinishBooking()));
+                          }
                         },
                         child: Text('Book Freelancer')),
                   ),

@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:worksaga/models/usermodel.dart';
 import '../../Widgets/appbar.dart';
 
+import '../freelancerprofile/freelancerprofile.dart';
 import 'favourite.dart';
 import 'pastbookig.dart';
 
@@ -48,7 +49,7 @@ class _BookingsState extends State<Bookings> {
 
   Color primarycolor = Color(0xff182a42);
   Color secondarycolor = Color.fromARGB(255, 184, 213, 235);
-  Color widgetcolor = Color.fromARGB(255, 236, 236, 238);
+  Color widgetcolor = Color.fromARGB(255, 214, 237, 255);
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -60,7 +61,7 @@ class _BookingsState extends State<Bookings> {
             );
           } else if (snapshot.hasError) {
             print(snapshot.error.toString());
-            return Text(snapshot.error.toString());
+            return Center();
           } else if (snapshot.connectionState == ConnectionState.done &&
               snapshot.hasData) {
             print(snapshot.data!..upcomingBookings.length);
@@ -112,7 +113,141 @@ class _BookingsState extends State<Bookings> {
                                 children: <Widget>[
                                   Center(
                                     child: SingleChildScrollView(
-                                        child: FavouriteBookings()),
+                                        child: ListView.builder(
+                                            itemCount:
+                                                snapshot.data!.bookmarks.length,
+                                            shrinkWrap: true,
+                                            physics:
+                                                NeverScrollableScrollPhysics(),
+                                            itemBuilder: (BuildContext, index) {
+                                              return InkWell(
+                                                  onTap: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                FreelancerProfile(
+                                                                    value: snapshot
+                                                                        .data!
+                                                                        .bookmarks[
+                                                                            index]
+                                                                        .freelancerId)));
+                                                  },
+                                                  child: Container(
+                                                      margin: EdgeInsets.only(
+                                                          top: 20.0,
+                                                          left: 20.0,
+                                                          right: 20.0),
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              5.0),
+                                                      decoration: BoxDecoration(
+                                                        color: widgetcolor,
+                                                        boxShadow: [
+                                                          // BoxShadow(
+                                                          //     color:
+                                                          //         Color.fromARGB(
+                                                          //             255,
+                                                          //             192,
+                                                          //             189,
+                                                          //             189),
+                                                          //     blurRadius: 5.0,
+                                                          //     blurStyle: BlurStyle
+                                                          //         .outer),
+                                                        ],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(50.0),
+                                                      ),
+                                                      child: Row(
+                                                        children: [
+                                                          CircleAvatar(
+                                                            backgroundImage:
+                                                                NetworkImage(snapshot
+                                                                    .data!
+                                                                    .bookmarks[
+                                                                        index]
+                                                                    .Avatar),
+                                                            radius: 40,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                        .fromLTRB(
+                                                                    15,
+                                                                    0,
+                                                                    0,
+                                                                    0),
+                                                            child: Column(
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Column(
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Text(
+                                                                      snapshot
+                                                                          .data!
+                                                                          .bookmarks[
+                                                                              index]
+                                                                          .freelancerName,
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            16,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                      ),
+                                                                    ),
+                                                                    Padding(
+                                                                      padding:
+                                                                          const EdgeInsets.fromLTRB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                      child: RatingBar
+                                                                          .builder(
+                                                                        initialRating:
+                                                                            3,
+                                                                        minRating:
+                                                                            1,
+                                                                        direction:
+                                                                            Axis.horizontal,
+                                                                        allowHalfRating:
+                                                                            true,
+                                                                        itemCount:
+                                                                            5,
+                                                                        itemSize:
+                                                                            13.0,
+                                                                        itemPadding:
+                                                                            EdgeInsets.symmetric(horizontal: 0.5),
+                                                                        itemBuilder:
+                                                                            (context, _) =>
+                                                                                Icon(
+                                                                          Icons
+                                                                              .star,
+                                                                          color:
+                                                                              Colors.black,
+                                                                        ),
+                                                                        onRatingUpdate:
+                                                                            (rating) {
+                                                                          print(
+                                                                              rating);
+                                                                        },
+                                                                      ),
+                                                                    )
+                                                                  ],
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          )
+                                                        ],
+                                                      )));
+                                            })),
                                   ),
                                   SingleChildScrollView(
                                       child: ListView.builder(
@@ -122,7 +257,19 @@ class _BookingsState extends State<Bookings> {
                                           physics:
                                               NeverScrollableScrollPhysics(),
                                           itemBuilder: (BuildContext, index) {
-                                            return GestureDetector(
+                                            return InkWell(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              FreelancerProfile(
+                                                                  value: snapshot
+                                                                      .data!
+                                                                      .upcomingBookings[
+                                                                          index]
+                                                                      .freelancerId)));
+                                                },
                                                 child: Container(
                                                     margin: EdgeInsets.only(
                                                         top: 20.0,
@@ -134,16 +281,16 @@ class _BookingsState extends State<Bookings> {
                                                     decoration: BoxDecoration(
                                                       color: widgetcolor,
                                                       boxShadow: [
-                                                        BoxShadow(
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    192,
-                                                                    189,
-                                                                    189),
-                                                            blurRadius: 5.0,
-                                                            blurStyle: BlurStyle
-                                                                .outer),
+                                                        // BoxShadow(
+                                                        //     color:
+                                                        //         Color.fromARGB(
+                                                        //             255,
+                                                        //             192,
+                                                        //             189,
+                                                        //             189),
+                                                        //     blurRadius: 5.0,
+                                                        //     blurStyle: BlurStyle
+                                                        //         .outer),
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -158,7 +305,7 @@ class _BookingsState extends State<Bookings> {
                                                                   .upcomingBookings[
                                                                       index]
                                                                   .avatar),
-                                                          radius: 35,
+                                                          radius: 40,
                                                         ),
                                                         Padding(
                                                           padding:
@@ -171,6 +318,9 @@ class _BookingsState extends State<Bookings> {
                                                                     .start,
                                                             children: [
                                                               Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
                                                                 children: [
                                                                   Text(
                                                                     snapshot
@@ -190,7 +340,7 @@ class _BookingsState extends State<Bookings> {
                                                                   Padding(
                                                                     padding:
                                                                         const EdgeInsets.fromLTRB(
-                                                                            10,
+                                                                            0,
                                                                             0,
                                                                             0,
                                                                             0),
@@ -207,7 +357,7 @@ class _BookingsState extends State<Bookings> {
                                                                       itemCount:
                                                                           5,
                                                                       itemSize:
-                                                                          16.0,
+                                                                          13.0,
                                                                       itemPadding:
                                                                           EdgeInsets.symmetric(
                                                                               horizontal: 0.5),
@@ -237,7 +387,11 @@ class _BookingsState extends State<Bookings> {
                                                                         0,
                                                                         0),
                                                                 child: Text(
-                                                                  'data',
+                                                                  snapshot
+                                                                      .data!
+                                                                      .upcomingBookings[
+                                                                          index]
+                                                                      .freelancerEmail,
                                                                   style: TextStyle(
                                                                       fontSize:
                                                                           12),
@@ -252,7 +406,11 @@ class _BookingsState extends State<Bookings> {
                                                                         0,
                                                                         0),
                                                                 child: Text(
-                                                                  'data',
+                                                                  snapshot
+                                                                      .data!
+                                                                      .upcomingBookings[
+                                                                          index]
+                                                                      .mobileNo,
                                                                   style: TextStyle(
                                                                       fontSize:
                                                                           12),
@@ -264,10 +422,180 @@ class _BookingsState extends State<Bookings> {
                                                       ],
                                                     )));
                                           })),
-                                  Center(
-                                    child: SingleChildScrollView(
-                                        child: PastBookings()),
-                                  ),
+                                  // past booking here
+                                  SingleChildScrollView(
+                                      child: ListView.builder(
+                                          itemCount: snapshot
+                                              .data!.pastBookings.length,
+                                          shrinkWrap: true,
+                                          physics:
+                                              NeverScrollableScrollPhysics(),
+                                          itemBuilder: (BuildContext, index) {
+                                            return InkWell(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              FreelancerProfile(
+                                                                  value: snapshot
+                                                                      .data!
+                                                                      .pastBookings[
+                                                                          index]
+                                                                      .freelancerId)));
+                                                },
+                                                child: Container(
+                                                    margin: EdgeInsets.only(
+                                                        top: 20.0,
+                                                        left: 20.0,
+                                                        right: 20.0),
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            5.0),
+                                                    decoration: BoxDecoration(
+                                                      color: widgetcolor,
+                                                      boxShadow: [
+                                                        // BoxShadow(
+                                                        //     color:
+                                                        //         Color.fromARGB(
+                                                        //             255,
+                                                        //             192,
+                                                        //             189,
+                                                        //             189),
+                                                        //     blurRadius: 5.0,
+                                                        //     blurStyle: BlurStyle
+                                                        //         .outer),
+                                                      ],
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              50.0),
+                                                    ),
+                                                    child: Row(
+                                                      children: [
+                                                        CircleAvatar(
+                                                          backgroundImage:
+                                                              NetworkImage(snapshot
+                                                                  .data!
+                                                                  .pastBookings[
+                                                                      index]
+                                                                  .avatar),
+                                                          radius: 40,
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .fromLTRB(
+                                                                  15, 0, 0, 0),
+                                                          child: Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    snapshot
+                                                                        .data!
+                                                                        .pastBookings[
+                                                                            index]
+                                                                        .freelancerName,
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          16,
+                                                                      overflow:
+                                                                          TextOverflow
+                                                                              .ellipsis,
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding:
+                                                                        const EdgeInsets.fromLTRB(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
+                                                                    child: RatingBar
+                                                                        .builder(
+                                                                      initialRating:
+                                                                          3,
+                                                                      minRating:
+                                                                          1,
+                                                                      direction:
+                                                                          Axis.horizontal,
+                                                                      allowHalfRating:
+                                                                          true,
+                                                                      itemCount:
+                                                                          5,
+                                                                      itemSize:
+                                                                          13.0,
+                                                                      itemPadding:
+                                                                          EdgeInsets.symmetric(
+                                                                              horizontal: 0.5),
+                                                                      itemBuilder:
+                                                                          (context, _) =>
+                                                                              Icon(
+                                                                        Icons
+                                                                            .star,
+                                                                        color: Colors
+                                                                            .black,
+                                                                      ),
+                                                                      onRatingUpdate:
+                                                                          (rating) {
+                                                                        print(
+                                                                            rating);
+                                                                      },
+                                                                    ),
+                                                                  )
+                                                                ],
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .fromLTRB(
+                                                                        0,
+                                                                        6,
+                                                                        0,
+                                                                        0),
+                                                                child: Text(
+                                                                  snapshot
+                                                                      .data!
+                                                                      .pastBookings[
+                                                                          index]
+                                                                      .freelancerEmail,
+                                                                  style: TextStyle(
+                                                                      fontSize:
+                                                                          12),
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .fromLTRB(
+                                                                        0,
+                                                                        6,
+                                                                        0,
+                                                                        0),
+                                                                child: Text(
+                                                                  snapshot
+                                                                      .data!
+                                                                      .pastBookings[
+                                                                          index]
+                                                                      .mobileNo,
+                                                                  style: TextStyle(
+                                                                      fontSize:
+                                                                          12),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )
+                                                      ],
+                                                    )));
+                                          })),
                                 ],
                               ),
                             ),

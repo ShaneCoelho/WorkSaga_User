@@ -52,7 +52,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                       Container(
                         width: 170,
                         child: Text(
-                          'An electrician is a tradesperson specializing in electrical wiring',
+                          'Click to select your favourite worker and get your work done',
                           style: TextStyle(fontSize: 12),
                         ),
                       )

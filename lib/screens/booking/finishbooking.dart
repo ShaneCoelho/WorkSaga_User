@@ -41,27 +41,6 @@ class _FinishBookingState extends State<FinishBooking> {
                     elevation: MaterialStateProperty.all(0)),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Bookings()));
-                },
-                child: Text('Check Booking')),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 50,
-            width: 200,
-            child: ElevatedButton(
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    )),
-                    backgroundColor: MaterialStateProperty.all(
-                        Color.fromARGB(255, 11, 39, 53)),
-                    elevation: MaterialStateProperty.all(0)),
-                onPressed: () {
-                  Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Navbar()));
                 },
                 child: Text('Continue Booking')),

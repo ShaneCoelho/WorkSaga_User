@@ -23,7 +23,7 @@ class _SelectedCategoriesState extends State<SelectedCategories> {
     // final email = pref.getString("email");
 
     final url = Uri.parse(
-        "https://worksaga.herokuapp.com/api/user/findfreelancerstype/" +
+        "https://worksaga.onrender.com/api/user/findfreelancerstype/" +
             widget.value);
     var response = await http.get(
       url,

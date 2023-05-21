@@ -19,7 +19,7 @@ class _EditProfileState extends State<EditProfile> {
   Future<void> EditProfile(String email, String mobileno, String name) async {
     final pref = await SharedPreferences.getInstance();
     final Authtoken = pref.getString("auth-token");
-    final String cc = "https://worksaga.herokuapp.com/api/user/editdetails";
+    final String cc = "https://worksaga.onrender.com/api/user/editdetails";
     final response = await http.post(
       Uri.parse(cc),
       headers: <String, String>{

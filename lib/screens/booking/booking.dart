@@ -24,7 +24,7 @@ class _BookingsState extends State<Bookings> {
     final Authtoken = pref.getString("auth-token");
     late FreelancerModel docs;
 
-    final url = Uri.parse("https://worksaga.herokuapp.com/api/auth/getuser");
+    final url = Uri.parse("https://worksaga.onrender.com/api/auth/getuser");
     var response = await http.post(
       url,
       headers: <String, String>{
@@ -35,14 +35,16 @@ class _BookingsState extends State<Bookings> {
 
     print(response.statusCode);
     if (response.statusCode == 200) {
-      print(response.body);
+      // print(response.body);
       var data = jsonDecode(response.body);
-
+      print(response.statusCode);
       docs = FreelancerModel.fromJson(data);
+      print("Suc");
     } else {
       print(response.statusCode);
+      print("fail");
     }
-    print(docs);
+    // print(docs);
 
     return docs;
   }

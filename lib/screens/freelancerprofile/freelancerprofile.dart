@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' ;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
 import 'package:favorite_button/favorite_button.dart';
 import 'package:http/http.dart' as http;
 import 'package:worksaga/widgets/navbar.dart';
@@ -36,7 +36,7 @@ class _FreelancerProfileState extends State<FreelancerProfile> {
     final pref = await SharedPreferences.getInstance();
     final Authtoken = pref.getString("auth-token");
     String cc =
-        "https://worksaga.herokuapp.com/api/user/bookmark/" + widget.value;
+        "https://worksaga.onrender.com/api/user/bookmark/" + widget.value;
     final response = await http.post(
       Uri.parse(cc),
       headers: <String, String>{
@@ -61,7 +61,7 @@ class _FreelancerProfileState extends State<FreelancerProfile> {
     final pref = await SharedPreferences.getInstance();
     final Authtoken = pref.getString("auth-token");
     String cc =
-        "https://worksaga.herokuapp.com/api/user/bookmark/" + widget.value;
+        "https://worksaga.onrender.com/api/user/bookmark/" + widget.value;
 
     final response = await http.post(
       Uri.parse(cc),
@@ -85,7 +85,7 @@ class _FreelancerProfileState extends State<FreelancerProfile> {
 
   Future<UserModel> getprofile() async {
     late UserModel model;
-    String cc = "https://worksaga.herokuapp.com/api/user/findfreelancers/" +
+    String cc = "https://worksaga.onrender.com/api/user/findfreelancers/" +
         widget.value;
     var url = Uri.parse(cc);
 

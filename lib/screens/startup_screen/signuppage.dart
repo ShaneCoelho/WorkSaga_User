@@ -21,7 +21,7 @@ class SignUp extends StatefulWidget {
 Future<void> createAlbum(
     String name, String email, String password, String mobileNo) async {
   final response = await http.post(
-    Uri.parse('https://worksaga.herokuapp.com/api/auth/createuser'),
+    Uri.parse('https://worksaga.onrender.com/api/auth/createuser'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },

@@ -7,9 +7,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:timeago/timeago.dart';
@@ -32,7 +33,7 @@ class _ProfileState extends State<Profile> {
   // Future<void> Profilevv(String email, String mobileno, String name) async {
   //   final pref = await SharedPreferences.getInstance();
   //   final Authtoken = pref.getString("auth-token");
-  //   final String cc = "https://worksaga.herokuapp.com/api/user/editdetails";
+  //   final String cc = "https://worksaga.onrender.com/api/user/editdetails";
   //   final response = await http.post(
   //     Uri.parse(cc),
   //     headers: <String, String>{
@@ -64,8 +65,7 @@ class _ProfileState extends State<Profile> {
       profilePicture = profilePic! as PickedFile?;
     });
 
-    var url =
-        Uri.parse("https://worksaga.herokuapp.com/api/userprofile/avatar");
+    var url = Uri.parse("https://worksaga.onrender.com/api/userprofile/avatar");
 
     try {
       final request = http.MultipartRequest("POST", url);
@@ -105,7 +105,7 @@ class _ProfileState extends State<Profile> {
     });
 
     var url2 =
-        Uri.parse("https://worksaga.herokuapp.com/api/userprofile/banner");
+        Uri.parse("https://worksaga.onrender.com/api/userprofile/banner");
 
     try {
       final request2 = http.MultipartRequest("POST", url2);
@@ -138,7 +138,7 @@ class _ProfileState extends State<Profile> {
     final Authtoken = pref.getString("auth-token");
     late FreelancerModel docs;
 
-    final url = Uri.parse("https://worksaga.herokuapp.com/api/auth/getuser");
+    final url = Uri.parse("https://worksaga.onrender.com/api/auth/getuser");
     var response = await http.post(
       url,
       headers: <String, String>{
@@ -151,12 +151,12 @@ class _ProfileState extends State<Profile> {
     if (response.statusCode == 200) {
       print(response.body);
       var data = jsonDecode(response.body);
-
       docs = FreelancerModel.fromJson(data);
     } else {
       print(response.statusCode);
     }
     print(docs);
+   
 
     return docs;
   }

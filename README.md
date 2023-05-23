@@ -1,6 +1,6 @@
 # worksaga
 
-A new Flutter project.
+This app developed for freelancers is a platform that allows them to create a professional profile and offer their services to potential clients. Freelancers can showcase their skills, experience, and portfolio to attract clients. The following code is for the Users app. The forntend of this app is developed using Flutter.
 
 ## Getting Started
 
